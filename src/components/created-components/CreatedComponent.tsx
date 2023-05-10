@@ -1,11 +1,12 @@
-import { CreatedComponentProps } from "../../types/ui";
+import { FormProps } from "../../types/ui";
+import { ComponentList } from "./indexComponents";
 
-export const CreatedComponent = ({ componentes }: CreatedComponentProps) => {
+export const CreatedComponent = ({ components }: FormProps) => {
   return (
     <div>
       <ul className="list-disc">
-        {componentes.map((com) => (
-          <li>{com}</li>
+        {components.map((com: string) => (
+          <li>{ComponentList[com]}</li>
         ))}
       </ul>
     </div>
