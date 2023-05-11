@@ -12,3 +12,18 @@ export type ShowComponentsProps = {
 };
 
 export type FormProps = CreateComponentButtonProps & ShowComponentsProps;
+
+export type BasicFormProps = CreateComponentButtonProps &
+  ShowComponentsProps & {
+    handleRemoveComponent: () => void;
+  };
+
+export type BasicFormContainerProps = ShowComponentsProps & {
+  index: number;
+  setComponents: (components: JSX.Element[]) => void;
+};
+
+export type BasicButtonProps = {
+  handleClick: () => void;
+  label: string;
+};
