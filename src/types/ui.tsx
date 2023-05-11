@@ -16,6 +16,8 @@ export type FormProps = CreateComponentButtonProps & ShowComponentsProps;
 export type BasicFormProps = CreateComponentButtonProps &
   ShowComponentsProps & {
     handleRemoveComponent: () => void;
+    handleDropdown: () => void;
+    isDropdown: boolean;
   };
 
 export type BasicFormContainerProps = ShowComponentsProps & {

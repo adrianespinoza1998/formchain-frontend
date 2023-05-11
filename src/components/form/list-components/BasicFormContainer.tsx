@@ -8,6 +8,7 @@ export const BasicFormContainer = ({
   index,
 }: BasicFormContainerProps) => {
   const [innerComponents, setInnerComponents] = useState<JSX.Element[]>([]);
+  const [isDropdown, setIsDropdown] = useState<boolean>(false);
 
   const handleAddComponent = () => {
     const lista = [...innerComponents, <h1>Components</h1>];
@@ -15,8 +16,11 @@ export const BasicFormContainer = ({
   };
 
   const handleRemoveComponent = () => {
-    console.log("index", index);
     setComponents(components.filter((_, i) => i !== index));
+  };
+
+  const handleDropdown = () => {
+    setIsDropdown(!isDropdown);
   };
 
   return (
@@ -24,6 +28,9 @@ export const BasicFormContainer = ({
       handleAddComponent={handleAddComponent}
       handleRemoveComponent={handleRemoveComponent}
       components={innerComponents}
+      isDropdown={isDropdown}
+      handleDropdown={handleDropdown}
+      //   setIsDropdown={setIsDropdown}
     />
   );
 };
