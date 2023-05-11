@@ -15,6 +15,7 @@ export const BasicFormContainer = ({
   };
 
   const handleRemoveComponent = () => {
+    console.log("index", index);
     setComponents(components.filter((_, i) => i !== index));
   };
 

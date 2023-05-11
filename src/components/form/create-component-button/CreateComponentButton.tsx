@@ -1,5 +1,3 @@
-// import { Plus } from "@heroicons/react";
-
 import { CreateComponentButtonProps } from "../../../types/ui";
 
 export const CreateComponentButton = ({
