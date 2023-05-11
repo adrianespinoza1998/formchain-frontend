@@ -1,4 +1,7 @@
-export const DropdownsList = () => {
+import { DropdownsListProps } from "../../../../types/ui";
+import { AnchorDropdown } from "./AnchorDropdown";
+
+export const DropdownsList = ({ optionList }: DropdownsListProps) => {
   return (
     <div
       className="right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
@@ -7,7 +10,10 @@ export const DropdownsList = () => {
       aria-labelledby="menu-button"
     >
       <div className="py-1" role="none">
-        <a
+        {optionList.map((ol: string, index: number) => {
+          return <AnchorDropdown key={index} label={ol} />;
+        })}
+        {/* <a
           href="#"
           className="text-gray-700 block px-4 py-2 text-sm"
           role="menuitem"
@@ -40,7 +46,7 @@ export const DropdownsList = () => {
           >
             Sign out
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );

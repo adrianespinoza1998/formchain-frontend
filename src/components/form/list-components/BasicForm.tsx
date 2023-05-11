@@ -1,6 +1,5 @@
 import { BasicFormProps } from "../../../types/ui";
 import { AddButton } from "../buttons/AddButton";
-// import { AddButtonDropdown } from "../buttons/AddButtonDropdown";
 import { DeleteButton } from "../buttons/DeleteButton";
 import { DropdownsList } from "../buttons/dropdown/DropdownsList";
 
@@ -10,6 +9,7 @@ export const BasicForm = ({
   components,
   isDropdown,
   handleDropdown,
+  optionList,
 }: BasicFormProps) => {
   return (
     <div className="min-h-fit rounded bg-gray-50 my-2">
@@ -20,9 +20,8 @@ export const BasicForm = ({
       </div>
       <div className="flex- items-end justify-items-end">
         <AddButton handleClick={handleDropdown} label="+" />
-        {/* <AddButtonDropdown /> */}
         <DeleteButton handleClick={handleRemoveComponent} label="-" />
-        {isDropdown && <DropdownsList />}
+        {isDropdown && <DropdownsList optionList={optionList} />}
       </div>
     </div>
   );

@@ -9,6 +9,16 @@ export const BasicFormContainer = ({
 }: BasicFormContainerProps) => {
   const [innerComponents, setInnerComponents] = useState<JSX.Element[]>([]);
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
+  const [optionList, setOptionList] = useState<string[]>([
+    "Title",
+    "Button",
+    "Checkbutton",
+    "Radio",
+    "Input",
+    "Select",
+    "Textarea",
+    "Table",
+  ]);
 
   const handleAddComponent = () => {
     const lista = [...innerComponents, <h1>Components</h1>];
@@ -30,6 +40,7 @@ export const BasicFormContainer = ({
       components={innerComponents}
       isDropdown={isDropdown}
       handleDropdown={handleDropdown}
+      optionList={optionList}
       //   setIsDropdown={setIsDropdown}
     />
   );
