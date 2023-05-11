@@ -9,5 +9,5 @@ export const FormContainer = () => {
     setForms(lista);
   };
 
-  return <Form handleAddComponent={handleAddForm} />;
+  return <Form handleAddComponent={handleAddForm} components={forms} />;
 };

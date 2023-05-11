@@ -7,4 +7,8 @@ export type CreateComponentButtonProps = {
   handleAddComponent: () => void;
 };
 
-export type FormProps = CreateComponentButtonProps;
+export type ShowComponentsProps = {
+  components: JSX.Element[];
+};
+
+export type FormProps = CreateComponentButtonProps & ShowComponentsProps;
