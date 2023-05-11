@@ -20,10 +20,10 @@ export const BasicFormContainer = ({
     "Table",
   ]);
 
-  const handleAddComponent = () => {
-    const lista = [...innerComponents, <h1>Components</h1>];
-    setInnerComponents(lista);
-  };
+  //   const handleAddComponent = () => {
+  //     const lista = [...innerComponents, <h1>Components</h1>];
+  //     setInnerComponents(lista);
+  //   };
 
   const handleRemoveComponent = () => {
     setComponents(components.filter((_, i) => i !== index));
@@ -33,14 +33,20 @@ export const BasicFormContainer = ({
     setIsDropdown(!isDropdown);
   };
 
+  const handleSelectDropdown = (e: HTMLButtonElement) => {
+    console.log(e.textContent);
+    setIsDropdown(!isDropdown);
+  };
+
   return (
     <BasicForm
-      handleAddComponent={handleAddComponent}
+      //   handleAddComponent={handleAddComponent}
       handleRemoveComponent={handleRemoveComponent}
       components={innerComponents}
       isDropdown={isDropdown}
       handleDropdown={handleDropdown}
       optionList={optionList}
+      handleClick={handleSelectDropdown}
       //   setIsDropdown={setIsDropdown}
     />
   );

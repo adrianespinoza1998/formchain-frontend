@@ -4,12 +4,13 @@ import { DeleteButton } from "../buttons/DeleteButton";
 import { DropdownsList } from "../buttons/dropdown/DropdownsList";
 
 export const BasicForm = ({
-  handleAddComponent,
+  //   handleAddComponent,
   handleRemoveComponent,
   components,
   isDropdown,
   handleDropdown,
   optionList,
+  handleClick,
 }: BasicFormProps) => {
   return (
     <div className="min-h-fit rounded bg-gray-50 my-2">
@@ -21,7 +22,9 @@ export const BasicForm = ({
       <div className="flex- items-end justify-items-end">
         <AddButton handleClick={handleDropdown} label="+" />
         <DeleteButton handleClick={handleRemoveComponent} label="-" />
-        {isDropdown && <DropdownsList optionList={optionList} />}
+        {isDropdown && (
+          <DropdownsList optionList={optionList} handleClick={handleClick} />
+        )}
       </div>
     </div>
   );

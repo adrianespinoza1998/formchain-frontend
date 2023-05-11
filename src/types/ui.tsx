@@ -15,10 +15,10 @@ export type FormProps = CreateComponentButtonProps & ShowComponentsProps;
 
 export type DropdownsListProps = {
   optionList: string[];
+  handleClick: (e: HTMLButtonElement) => void;
 };
 
-export type BasicFormProps = CreateComponentButtonProps &
-  ShowComponentsProps &
+export type BasicFormProps = ShowComponentsProps &
   DropdownsListProps & {
     handleRemoveComponent: () => void;
     handleDropdown: () => void;
@@ -35,4 +35,6 @@ export type BasicButtonProps = {
   label: string;
 };
 
-export type AnchorDropdownProps = Omit<BasicButtonProps, "handleClick">;
+export type AnchorDropdownProps = Omit<BasicButtonProps, "handleClick"> & {
+  handleClick: (e: HTMLButtonElement) => void;
+};
