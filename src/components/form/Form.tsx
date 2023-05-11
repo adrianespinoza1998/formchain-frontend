@@ -1,26 +1,10 @@
 import { FormProps } from "../../types/ui";
-import { ComponentListContainer } from "../component-list/ComponentListContainer";
-import { CreatedComponentContainer } from "../created-components/CreatedComponentContainer";
-import { SelectComponentContainer } from "../select-component/SelectComponentContainer";
+import { CreateComponentButton } from "./create-component-button/CreateComponentButton";
 
-export const Form = ({
-  components,
-  isOpen,
-  isCreate,
-  setIsCreate,
-  handleAddComponent,
-}: FormProps) => {
+export const Form = ({ handleAddComponent }: FormProps) => {
   return (
     <div className="p-20">
-      <CreatedComponentContainer components={components} isOpen={isOpen} />
-      <SelectComponentContainer
-        isOpen={isOpen}
-        isCreate={isCreate}
-        setIsCreate={setIsCreate}
-      />
-      {isCreate && (
-        <ComponentListContainer handleAddComponent={handleAddComponent} />
-      )}
+      <CreateComponentButton handleAddComponent={handleAddComponent} />
     </div>
   );
 };

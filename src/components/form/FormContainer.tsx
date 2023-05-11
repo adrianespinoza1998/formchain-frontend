@@ -1,23 +1,13 @@
 import { useState } from "react";
 import { Form } from "./Form";
-import { SidebarProps } from "../../types/ui";
 
-export const FormContainer = ({ isOpen }: SidebarProps) => {
-  const [isCreate, setIsCreate] = useState<boolean>(false);
-  const [components, setComponents] = useState<string[]>([]);
+export const FormContainer = () => {
+  const [forms, setForms] = useState<JSX.Element[]>([]);
 
-  const handleAddComponent = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const lista = [...components, e.currentTarget.name];
-    setComponents(lista);
-    setIsCreate(!isCreate);
+  const handleAddForm = () => {
+    const lista = [...forms, <div>Hola</div>];
+    setForms(lista);
   };
-  return (
-    <Form
-      components={components}
-      isCreate={isCreate}
-      setIsCreate={setIsCreate}
-      isOpen={isOpen}
-      handleAddComponent={handleAddComponent}
-    />
-  );
+
+  return <Form handleAddComponent={handleAddForm} />;
 };
