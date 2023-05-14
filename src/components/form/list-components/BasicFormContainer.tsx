@@ -1,6 +1,7 @@
+import { getComponent, getForms } from "../../../adapters/forms";
 import { BasicFormContainerProps } from "../../../types/ui";
 import { BasicForm } from "./BasicForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const BasicFormContainer = ({
   setComponents,
@@ -9,21 +10,7 @@ export const BasicFormContainer = ({
 }: BasicFormContainerProps) => {
   const [innerComponents, setInnerComponents] = useState<JSX.Element[]>([]);
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
-  const [optionList, setOptionList] = useState<string[]>([
-    "Title",
-    "Button",
-    "Checkbutton",
-    "Radio",
-    "Input",
-    "Select",
-    "Textarea",
-    "Table",
-  ]);
-
-  //   const handleAddComponent = () => {
-  //     const lista = [...innerComponents, <h1>Components</h1>];
-  //     setInnerComponents(lista);
-  //   };
+  const [optionList, setOptionList] = useState<string[]>([]);
 
   const handleRemoveComponent = () => {
     setComponents(components.filter((_, i) => i !== index));
@@ -34,9 +21,15 @@ export const BasicFormContainer = ({
   };
 
   const handleSelectDropdown = (e: HTMLButtonElement) => {
-    console.log(e.textContent);
+    // console.log(e.textContent);
+    const component = getComponent(e.textContent || "");
+    setInnerComponents([...innerComponents, component]);
     setIsDropdown(!isDropdown);
   };
+
+  useEffect(() => {
+    setOptionList(getForms());
+  }, [index]);
 
   return (
     <BasicForm
