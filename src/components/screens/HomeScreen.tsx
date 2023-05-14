@@ -9,7 +9,6 @@ export const HomeScreen = () => {
     <div>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       {isOpen && <Sidebar />}
-      {/* <SelectComponentContainer isOpen={isOpen} /> */}
       <FormContainer />
     </div>
   );

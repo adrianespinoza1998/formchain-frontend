@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Form } from "./Form";
 import { BasicFormContainer } from "./list-components/BasicFormContainer";
 
 export const FormContainer = () => {
   const [forms, setForms] = useState<JSX.Element[]>([]);
 
-  const handleAddForm = () => {
+  const handleAddForm = useCallback(() => {
     const lista = [
       ...forms,
       <BasicFormContainer
@@ -15,7 +15,7 @@ export const FormContainer = () => {
       />,
     ];
     setForms(lista);
-  };
+  }, [forms]);
 
   return <Form handleAddComponent={handleAddForm} components={forms} />;
 };
