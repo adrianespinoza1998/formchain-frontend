@@ -50,3 +50,5 @@ export type TitleProps = {
   handleBlur: () => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
+
+export type CheckbuttonPresentationalProps = CheckbuttonProps & TitleProps;
