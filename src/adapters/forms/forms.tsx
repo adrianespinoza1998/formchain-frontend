@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from "uuid";
-import { Input } from "./Input";
 import { Select } from "./Select";
 import { Textarea } from "./Textarea";
 import { Table } from "./Table";
@@ -7,6 +6,7 @@ import { TitleContainer } from "./title/TitleContainer";
 import { ButtonContainer } from "./button/ButtonContainer";
 import { CheckbuttonContainer } from "./checkbutton/CheckbuttonContainer";
 import { RadiobuttonContainer } from "./radio-button/RadiobuttonContainer";
+import { InputContainer } from "./input/InputContainer";
 
 export const getForms: () => string[] = () => {
   return [
@@ -35,7 +35,7 @@ export const getComponent: (description: string) => JSX.Element = (
     case "Radio":
       return <RadiobuttonContainer uuid={uuid} />;
     case "Input":
-      return <Input uuid={uuid} />;
+      return <InputContainer uuid={uuid} />;
     case "Select":
       return <Select uuid={uuid} />;
     case "Textarea":
