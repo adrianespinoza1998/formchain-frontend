@@ -1,10 +1,9 @@
 import { BasicFormProps } from "../../../types/ui";
-import { AddButton } from "../buttons/AddButton";
-import { DeleteButton } from "../buttons/DeleteButton";
-import { DropdownsList } from "../buttons/dropdown/DropdownsList";
+import AddButton from "../buttons/AddButtonExport";
+import DeleteButton from "../buttons/DeleteButtonExport";
+import DropdownsList from "../buttons/dropdown/DropdownsListExport";
 
 export const BasicForm = ({
-  //   handleAddComponent,
   handleRemoveComponent,
   components,
   isDropdown,

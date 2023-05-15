@@ -1,5 +1,5 @@
 import { DropdownsListProps } from "../../../../types/ui";
-import { AnchorDropdown } from "./AnchorDropdown";
+import AnchorDropdown from "./AnchorDropdownExport";
 
 export const DropdownsList = ({
   optionList,

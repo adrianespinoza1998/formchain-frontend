@@ -1,4 +1,3 @@
-import { NavbarContainer } from "./components/navbar/NavbarContainer";
 import { HomeScreen } from "./components/screens/HomeScreen";
 import "./styles/index.css";
 
