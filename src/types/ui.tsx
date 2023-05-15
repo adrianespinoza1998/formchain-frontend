@@ -42,3 +42,11 @@ export type AnchorDropdownProps = Omit<BasicButtonProps, "handleClick"> & {
 export type CheckbuttonProps = {
   uuid: string;
 };
+
+export type TitleProps = {
+  isEditing: boolean;
+  label: string;
+  handleDoubleClick: () => void;
+  handleBlur: () => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};

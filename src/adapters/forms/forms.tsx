@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from "uuid";
-import { Title } from "./Title";
 import { Button } from "./Button";
 import { Checkbutton } from "./Checkbutton";
 import { Radiobutton } from "./Radiobutton";
@@ -7,6 +6,7 @@ import { Input } from "./Input";
 import { Select } from "./Select";
 import { Textarea } from "./Textarea";
 import { Table } from "./Table";
+import { TitleContainer } from "./title/TitleContainer";
 
 export const getForms: () => string[] = () => {
   return [
@@ -27,7 +27,7 @@ export const getComponent: (description: string) => JSX.Element = (
   const uuid = uuidv4();
   switch (description) {
     case "Title":
-      return <Title />;
+      return <TitleContainer />;
     case "Button":
       return <Button />;
     case "Checkbutton":
