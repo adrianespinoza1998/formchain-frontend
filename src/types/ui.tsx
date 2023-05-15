@@ -38,3 +38,7 @@ export type BasicButtonProps = {
 export type AnchorDropdownProps = Omit<BasicButtonProps, "handleClick"> & {
   handleClick: (e: HTMLButtonElement) => void;
 };
+
+export type CheckbuttonProps = {
+  uuid: string;
+};

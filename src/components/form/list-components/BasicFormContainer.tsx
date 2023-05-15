@@ -1,4 +1,4 @@
-import { getComponent, getForms } from "../../../adapters/forms";
+import { getComponent, getForms } from "../../../adapters/forms/forms";
 import { BasicFormContainerProps } from "../../../types/ui";
 import { BasicForm } from "./BasicForm";
 import { useEffect, useState, useCallback } from "react";
