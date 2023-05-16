@@ -65,8 +65,9 @@ export type ComponentGridPresentationProps = ShowComponentsProps & {
   numRows: number;
 };
 
-export type AddComponentProps = {
-  isDropdown: boolean;
-  optionList: string[];
-  handleClick: () => void;
+export type AddComponentProps = Omit<
+  BasicFormProps,
+  "handleRemoveComponent"
+> & {
+  handleRemoveComponent: (index: number) => void;
 };
