@@ -32,14 +32,15 @@ export const Table = () => {
             <td className="px-6 py-4 text-gray-800">Silver</td>
             <td className="px-6 py-4 text-gray-800">Laptop</td>
             <td className="px-6 py-4 text-gray-800">$2999</td>
-            <td className="px-6 py-4 text-gray-800">
+            {/* <td className="px-6 py-4 text-gray-800">
               <a
                 href="#"
                 className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
               >
                 Edit
               </a>
-            </td>
+            </td> */}
+            <td className="px-6 py-4 text-gray-800">$2999</td>
           </tr>
         </tbody>
       </table>
