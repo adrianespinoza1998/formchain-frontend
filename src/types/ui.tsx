@@ -61,4 +61,6 @@ export type ComponentGridProps = {
   numRows: number;
 };
 
-export type ComponentGridPresentationProps = ShowComponentsProps;
+export type ComponentGridPresentationProps = ShowComponentsProps & {
+  numRows: number;
+};

@@ -16,5 +16,5 @@ export const ComponentGridContainer = ({ numRows }: ComponentGridProps) => {
     setComponents(lista);
   }, [numRows]);
 
-  return <ComponentGrid components={components} />;
+  return <ComponentGrid components={components} numRows={components.length} />;
 };

@@ -8,6 +8,9 @@ import { SelectContainer } from "./select/SelectContainer";
 import { TextareaContainer } from "./textarea/TextareaContainer";
 import { TableContainer } from "./table/TableContainer";
 import { ComponentGridContainer } from "./columns/ComponentGridContainer";
+import { FourColumns } from "./columns/FourColumns";
+import { TreeColumns } from "./columns/TreeColumns";
+import { TwoColumns } from "./columns/TwoColumns";
 
 export const getForms: () => string[] = () => {
   return [
@@ -50,11 +53,14 @@ export const getComponent: (description: string) => JSX.Element = (
     case "1 Column":
       return <ComponentGridContainer numRows={1} />;
     case "2 Columns":
-      return <ComponentGridContainer numRows={2} />;
+      // return <ComponentGridContainer numRows={2} />;
+      return <TwoColumns />;
     case "3 Columns":
-      return <ComponentGridContainer numRows={3} />;
+      // return <ComponentGridContainer numRows={3} />;
+      return <TreeColumns />;
     case "4 Columns":
-      return <ComponentGridContainer numRows={4} />;
+      // return <ComponentGridContainer numRows={4} />;
+      return <FourColumns />;
     default:
       return <></>;
   }
