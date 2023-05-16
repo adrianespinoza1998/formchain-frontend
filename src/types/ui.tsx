@@ -52,3 +52,7 @@ export type TitleProps = {
 };
 
 export type CheckbuttonPresentationalProps = CheckbuttonProps & TitleProps;
+
+export type TableHeaderProps = {
+  label: string;
+};
