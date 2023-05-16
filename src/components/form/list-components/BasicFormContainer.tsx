@@ -1,4 +1,4 @@
-import { getComponent, getForms } from "../../../adapters/forms/forms";
+import { getColumnNumbers, getComponent } from "../../../adapters/forms/forms";
 import { BasicFormContainerProps } from "../../../types/ui";
 import { BasicForm } from "./BasicForm";
 import { useEffect, useState, useCallback } from "react";
@@ -30,7 +30,7 @@ export const BasicFormContainer = ({
   );
 
   useEffect(() => {
-    setOptionList(getForms());
+    setOptionList(getColumnNumbers());
   }, [index]);
 
   return (

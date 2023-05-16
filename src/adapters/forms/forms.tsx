@@ -7,6 +7,7 @@ import { InputContainer } from "./input/InputContainer";
 import { SelectContainer } from "./select/SelectContainer";
 import { TextareaContainer } from "./textarea/TextareaContainer";
 import { TableContainer } from "./table/TableContainer";
+import { ComponentGridContainer } from "./columns/ComponentGridContainer";
 
 export const getForms: () => string[] = () => {
   return [
@@ -19,6 +20,10 @@ export const getForms: () => string[] = () => {
     "Textarea",
     "Table",
   ];
+};
+
+export const getColumnNumbers: () => string[] = () => {
+  return ["1 Column", "2 Columns", "3 Columns", "4 Columns"];
 };
 
 export const getComponent: (description: string) => JSX.Element = (
@@ -42,6 +47,14 @@ export const getComponent: (description: string) => JSX.Element = (
       return <TextareaContainer uuid={uuid} />;
     case "Table":
       return <TableContainer />;
+    case "1 Column":
+      return <ComponentGridContainer numRows={1} />;
+    case "2 Columns":
+      return <ComponentGridContainer numRows={2} />;
+    case "3 Columns":
+      return <ComponentGridContainer numRows={3} />;
+    case "4 Columns":
+      return <ComponentGridContainer numRows={4} />;
     default:
       return <></>;
   }

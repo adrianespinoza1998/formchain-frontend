@@ -56,3 +56,9 @@ export type CheckbuttonPresentationalProps = CheckbuttonProps & TitleProps;
 export type TableHeaderProps = {
   label: string;
 };
+
+export type ComponentGridProps = {
+  numRows: number;
+};
+
+export type ComponentGridPresentationProps = ShowComponentsProps;
