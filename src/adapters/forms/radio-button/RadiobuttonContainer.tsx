@@ -1,22 +1,10 @@
-import { ChangeEvent, useState } from "react";
 import { CheckbuttonProps } from "../../../types/ui";
 import { Radiobutton } from "./Radiobutton";
+import { useEditLabel } from "../../../hooks/useEditLabel";
 
 export const RadiobuttonContainer = ({ uuid }: CheckbuttonProps) => {
-  const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [label, setLabel] = useState<string>("Radio Button");
-
-  const handleDoubleClick = () => {
-    setIsEditing(true);
-  };
-
-  const handleBlur = () => {
-    setIsEditing(false);
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setLabel(e.target.value);
-  };
+  const { isEditing, label, handleBlur, handleChange, handleDoubleClick } =
+    useEditLabel("Radio Button");
   return (
     <Radiobutton
       uuid={uuid}

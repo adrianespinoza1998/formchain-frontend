@@ -1,21 +1,9 @@
-import { ChangeEvent, useState } from "react";
 import { Button } from "./Button";
+import { useEditLabel } from "../../../hooks/useEditLabel";
 
 export const ButtonContainer = () => {
-  const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [label, setLabel] = useState<string>("Button");
-
-  const handleDoubleClick = () => {
-    setIsEditing(true);
-  };
-
-  const handleBlur = () => {
-    setIsEditing(false);
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setLabel(e.target.value);
-  };
+  const { isEditing, label, handleBlur, handleChange, handleDoubleClick } =
+    useEditLabel("Button");
 
   return (
     <Button

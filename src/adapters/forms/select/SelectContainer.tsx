@@ -1,22 +1,10 @@
-import { ChangeEvent, useState } from "react";
 import { CheckbuttonProps } from "../../../types/ui";
 import { Select } from "./Select";
+import { useEditLabel } from "../../../hooks/useEditLabel";
 
 export const SelectContainer = ({ uuid }: CheckbuttonProps) => {
-  const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [label, setLabel] = useState<string>("Select");
-
-  const handleDoubleClick = () => {
-    setIsEditing(true);
-  };
-
-  const handleBlur = () => {
-    setIsEditing(false);
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setLabel(e.target.value);
-  };
+  const { isEditing, label, handleBlur, handleChange, handleDoubleClick } =
+    useEditLabel("Select");
   return (
     <Select
       uuid={uuid}

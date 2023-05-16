@@ -1,22 +1,11 @@
-import { ChangeEvent, useState } from "react";
+// import { ChangeEvent, useState } from "react";
+import { useEditLabel } from "../../../hooks/useEditLabel";
 import { CheckbuttonProps } from "../../../types/ui";
 import { Textarea } from "./Textarea";
 
 export const TextareaContainer = ({ uuid }: CheckbuttonProps) => {
-  const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [label, setLabel] = useState<string>("Textarea");
-
-  const handleDoubleClick = () => {
-    setIsEditing(true);
-  };
-
-  const handleBlur = () => {
-    setIsEditing(false);
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setLabel(e.target.value);
-  };
+  const { isEditing, label, handleBlur, handleChange, handleDoubleClick } =
+    useEditLabel("Textarea");
   return (
     <Textarea
       uuid={uuid}

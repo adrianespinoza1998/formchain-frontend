@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ComponentGridProps } from "../../../types/ui";
 import { ComponentGrid } from "./ComponentGrid";
-import { AddComponent } from "./AddComponent";
+import { AddComponentContainer } from "./add-column/AddComponentContainer";
 
 export const ComponentGridContainer = ({ numRows }: ComponentGridProps) => {
   const [components, setComponents] = useState<JSX.Element[]>([]);
@@ -10,7 +10,7 @@ export const ComponentGridContainer = ({ numRows }: ComponentGridProps) => {
     const lista: JSX.Element[] = [];
 
     for (let i = 0; i < numRows; i++) {
-      lista.push(<AddComponent />);
+      lista.push(<AddComponentContainer />);
     }
 
     setComponents(lista);

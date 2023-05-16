@@ -1,21 +1,10 @@
-import { ChangeEvent, useState } from "react";
+// import { ChangeEvent, useState } from "react";
 import { Title } from "./Title";
+import { useEditLabel } from "../../../hooks/useEditLabel";
 
 export const TitleContainer = () => {
-  const [isEditing, setIsEditing] = useState<boolean>(false);
-  const [label, setLabel] = useState<string>("Title");
-
-  const handleDoubleClick = () => {
-    setIsEditing(true);
-  };
-
-  const handleBlur = () => {
-    setIsEditing(false);
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setLabel(e.target.value);
-  };
+  const { isEditing, label, handleBlur, handleChange, handleDoubleClick } =
+    useEditLabel("Title");
 
   return (
     <Title
