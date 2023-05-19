@@ -71,3 +71,9 @@ export type AddComponentProps = Omit<
 > & {
   handleRemoveComponent: (index: number) => void;
 };
+
+export type TableDataProps = CheckbuttonProps & {
+  dataTypes: string[];
+  dataType: string;
+  handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+};

@@ -29,6 +29,10 @@ export const getColumnNumbers: () => string[] = () => {
   return ["1 Column", "2 Columns", "3 Columns", "4 Columns"];
 };
 
+export const getDataTypes: () => string[] = () => {
+  return ["String", "Number", "Date"];
+};
+
 export const getComponent: (description: string) => JSX.Element = (
   description: string
 ) => {
