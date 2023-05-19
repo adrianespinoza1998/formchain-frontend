@@ -4,7 +4,7 @@ import { useEditLabel } from "../../../hooks/useEditLabel";
 
 export const InputContainer = ({ uuid }: CheckbuttonProps) => {
   const { isEditing, label, handleBlur, handleChange, handleDoubleClick } =
-    useEditLabel("Radio Button");
+    useEditLabel("Input");
   return (
     <Input
       uuid={uuid}

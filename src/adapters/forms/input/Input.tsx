@@ -9,7 +9,7 @@ export const Input = ({
   handleDoubleClick,
 }: CheckbuttonPresentationalProps) => {
   return (
-    <div>
+    <div className="text-left">
       <label
         htmlFor={`input${uuid}`}
         className="block mb-2 text-sm font-medium text-gray-900"

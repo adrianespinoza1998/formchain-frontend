@@ -77,3 +77,9 @@ export type TableDataProps = CheckbuttonProps & {
   dataType: string;
   handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 };
+
+export type TableProps = {
+  addRows: () => void;
+  removeRows: () => void;
+  rows: string[];
+};
