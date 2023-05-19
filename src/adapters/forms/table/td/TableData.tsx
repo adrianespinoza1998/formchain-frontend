@@ -20,9 +20,6 @@ export const TableData = ({
         value={dataType}
         onChange={handleChange}
       >
-        {/* <option selected>String</option>
-        <option>Number</option>
-        <option>Date</option> */}
         {dataTypes.map((dt: string, i: number) => {
           return (
             <option key={i} value={dt}>
